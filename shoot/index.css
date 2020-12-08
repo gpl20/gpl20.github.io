@@ -119,7 +119,7 @@ body {
 @keyframes countTime {
    0% {
        width: 100%;
-       background-color: lime;
+       background-color: rgb(255, 0, 140);
    }
    50% {
        background-color:yellow;
