@@ -1,0 +1,253 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+  font-family: 'Coda', cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+/*
+* Styles for the deck of cards
+*/
+
+.deck {
+  width: 55%;
+  min-height: 680px;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+.deck .card {
+/*    height: 125px;*/
+  width: 20%;
+  background: #2e3d49;
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  margin: 1% 1%;
+}
+
+  .deck .card:after {
+  content:'';
+/*    float:left;*/
+  padding-top:100%;
+
+
+}
+
+.deck .card.open {
+  transform: rotateY(0);
+  background: #02b3e4;
+  cursor: default;
+  transition: background 0.4s;
+}
+
+.not-shown {
+  transform: rotateX(0) rotateY(0);
+}
+
+@media (hover: hover) {
+  .not-shown:hover{
+  background: #02b3e4;
+  transform: scale(1.1);
+  transition: all 0.05s;
+  transform: rotateX(180deg) rotateY(180deg);    
+  }
+}
+
+
+.deck .card.show {
+  font-size: 33px;
+   transform: rotateX(0deg) rotateY(0deg);
+  transition: all .5s ease-in;
+
+}
+
+
+.deck .card.match {
+  cursor: default;
+  background: #02ccba;
+  font-size: 33px;
+  transition: background 0.8s;
+  transform: skewX(180deg);
+
+
+}
+
+#deck .red-wrong {
+  background-color: red;
+}
+
+/*
+* Styles for the Score Panel
+*/
+
+.score-panel {
+  text-align: left;
+  width: 50%;
+  margin-bottom: 10px;
+  margin-left: 3%;
+  display: flex;
+}
+
+.score-panel .stars {
+  margin: 0;
+  padding: 0;
+ /* display: inline-flex;*/
+  margin: 0 5px 0 0;
+  width: 25%;
+}
+
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+  width: 25%;
+}
+
+.score-panel .moves {
+  width: 25%;
+}
+
+.score-panel .timer {
+  width: 25%;
+}
+
+.score-panel .restart {
+/*    display: inline-flex;*/
+  cursor: pointer;
+  width: 25%;
+}
+
+
+/*Modal styles*/
+
+#success-modal {
+display: none;
+}
+
+.modal {
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+height: 100%;
+width: 100%;
+background-color: rgba(0,0,0,0.2);
+
+
+}
+
+.modal-content {
+   background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */ 
+   padding: 1% 5% 5% 5%;
+}
+
+.modal-style {
+  background: linear-gradient(160deg, #aa7ecd 0%, #02ccba 100%);
+  margin: 10% auto;
+  width: 30%;
+  padding: 3% 3% 3% 3%;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  border-radius: 10px;
+
+}
+
+.close-button {
+  float: right;
+  font-size: 35px;
+  color: grey;
+  padding-top: 3%;
+}
+
+.close-button:hover, .close-button:focus {
+  color: #000;
+  cursor: pointer;
+}
+
+.modal-content p {
+  margin-bottom: 10%;
+}
+
+#button-restart {
+ margin-bottom: 0%;
+ background: #2e3d49;
+border-radius: 8px;
+box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+color: #fff;
+font-size: 18px;
+font-family: 'Coda', cursive;
+}
+
+#button-restart:hover, #button-restart:focus {
+  cursor: pointer;
+}
+
+
+
+/*media queries*/
+
+
+@media only screen and (max-width: 767px) {
+  .deck {
+      min-height: 500px;
+  }
+
+  .deck .card.show, .deck .card.match {
+      font-size: 25px; 
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .deck {
+      min-height: 350px;
+  }
+
+   .deck .card.show, .deck .card.match {
+      font-size: 18px; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .deck {
+      min-height: 300px;
+  }
+}
