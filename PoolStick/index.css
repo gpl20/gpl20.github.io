@@ -1,0 +1,14 @@
+body {
+	font-family: arial;
+    color: white;
+    user-select: none;
+    -moz-user-select: none;
+}
+.mainCanvas {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+    background: #48C;
+
+    background: radial-gradient(circle, rgba(134,95,95,1) 0%, rgba(105,103,147,1) 27%, rgba(103,125,152,1) 63%, rgba(126,126,194,1) 100%);
+}
