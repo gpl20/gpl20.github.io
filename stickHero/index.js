@@ -7,6 +7,10 @@ Array.prototype.last = function () {
   Math.sinus = function (degree) {
     return Math.sin((degree / 180) * Math.PI);
   };
+
+var audio = new Audio('raise.wav');
+  var fall = new Audio('fall.wav');
+  var run = new Audio('run.wav');
   
   // Game data
   let phase = "waiting"; // waiting | stretching | turning | walking | transitioning | falling
@@ -151,6 +155,7 @@ Array.prototype.last = function () {
   // If space was pressed restart the game
   start.addEventListener("pointerdown", function (event) {
     if (event.key == " ") {
+        audio.play();
       event.preventDefault();
       resetGame();
       return;
@@ -159,6 +164,9 @@ Array.prototype.last = function () {
   
   start.addEventListener("pointerdown", function (event) {
     if (phase == "waiting") {
+        audio.pause();
+      run.play();
+      audio.currentTime=0;
       lastTimestamp = undefined;
       introductionElement.style.opacity = 0;
       phase = "stretching";
@@ -237,6 +245,7 @@ Array.prototype.last = function () {
           // If hero won't reach another platform then limit it's position at the end of the pole
           const maxHeroX = sticks.last().x + sticks.last().length + heroWidth;
           if (heroX > maxHeroX) {
+              fall.play()
             heroX = maxHeroX;
             phase = "falling";
           }
