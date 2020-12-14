@@ -48,7 +48,6 @@ body {
   font-size: 1.2em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   display: none;
-  cursor: pointer;
 }
 
 #start {
@@ -63,7 +62,6 @@ body {
   font-weight: 700;
   font-size: 1.2em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
 }
 
 #perfect {
