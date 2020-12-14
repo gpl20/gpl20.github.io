@@ -58,6 +58,8 @@ body {
   color: white;
   background-color: red;
   border: none;
+  top: 80%;
+  left: 30px;
   z-index: 9999;
   font-weight: 700;
   font-size: 1.2em;
