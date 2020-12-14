@@ -54,7 +54,7 @@ body {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  position: fixed;
+  position:absolute;
   color: white;
   background-color: red;
   border: none;
