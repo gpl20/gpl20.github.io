@@ -61,6 +61,7 @@ Array.prototype.last = function () {
   const perfectElement = document.getElementById("perfect");
   const restartButton = document.getElementById("restart");
   const scoreElement = document.getElementById("score");
+  const start = document.getElementById("start");
   
   // Initialize layout
   resetGame();
@@ -148,7 +149,7 @@ Array.prototype.last = function () {
   resetGame();
   
   // If space was pressed restart the game
-  window.addEventListener("keydown", function (event) {
+  start.addEventListener("keydown", function (event) {
     if (event.key == " ") {
       event.preventDefault();
       resetGame();
@@ -156,7 +157,7 @@ Array.prototype.last = function () {
     }
   });
   
-  window.addEventListener("mousedown", function (event) {
+  start.addEventListener("mousedown", function (event) {
     if (phase == "waiting") {
       lastTimestamp = undefined;
       introductionElement.style.opacity = 0;
@@ -265,6 +266,7 @@ Array.prototype.last = function () {
           platformHeight + 100 + (window.innerHeight - canvasHeight) / 2;
         if (heroY > maxHeroY) {
           restartButton.style.display = "block";
+          start.style.display = "none";
           return;
         }
         break;
@@ -327,6 +329,7 @@ Array.prototype.last = function () {
     event.preventDefault();
     resetGame();
     restartButton.style.display = "none";
+    start.style.display = "block";
   });
   
   function drawPlatforms() {
