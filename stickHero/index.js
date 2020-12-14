@@ -166,13 +166,13 @@ Array.prototype.last = function () {
     }
   });
   
-  window.addEventListener("mouseup", function (event) {
+  start.addEventListener("mouseup", function (event) {
     if (phase == "stretching") {
       phase = "turning";
     }
   });
   
-  window.addEventListener("resize", function (event) {
+  start.addEventListener("resize", function (event) {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     draw();
