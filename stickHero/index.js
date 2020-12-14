@@ -149,7 +149,7 @@ Array.prototype.last = function () {
   resetGame();
   
   // If space was pressed restart the game
-  start.addEventListener("keydown", function (event) {
+  start.addEventListener("pointerdown", function (event) {
     if (event.key == " ") {
       event.preventDefault();
       resetGame();
@@ -157,16 +157,17 @@ Array.prototype.last = function () {
     }
   });
   
-  start.addEventListener("mousedown", function (event) {
+  start.addEventListener("pointerdown", function (event) {
     if (phase == "waiting") {
       lastTimestamp = undefined;
       introductionElement.style.opacity = 0;
       phase = "stretching";
       window.requestAnimationFrame(animate);
+        start.style.border="none";
     }
   });
   
-  start.addEventListener("mouseup", function (event) {
+  start.addEventListener("pointerup", function (event) {
     if (phase == "stretching") {
       phase = "turning";
     }
