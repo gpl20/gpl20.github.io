@@ -7,7 +7,21 @@
 			w:1280,
 			h:640
 		}
-
+myAudio = new Audio('leserGun.mp3'); 
+if (typeof myAudio.loop == 'boolean')
+{
+    myAudio.loop = true;
+}
+else
+{
+    myAudio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+}
+myAudio.play();
+ver leserBip=new Audio('leserGunbip.mp3');
+leser.play();
 
 		// var backi = new Image();
 		// backi.src = 'back.png';
@@ -314,6 +328,8 @@ function enginestep() {
 			if (!shield) {
 				if (dis<100*100) {
 					if (!glitch) {
+						leserBip.currentTime = 0;
+						leserBip.play();
 						score -= 500;
 						if (score < 0) {
                             score = 0;
