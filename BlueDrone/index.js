@@ -36,6 +36,12 @@
 
 var shld = {x:stage.w/4+250,y:stage.h/2,a:0,a2:0};
 
+var audio = new Audio("leserGun.mp3");
+
+var audio2 = new Audio("leserGunbip.mp3");
+audio.loop=true;
+audio.play();
+
 function Enemy() {
 	this.x = Math.floor(Math.random()*stage.w)+stage.w;
 	this.y = Math.floor(Math.random()*(stage.h-200))+100;
@@ -313,6 +319,7 @@ function enginestep() {
 			if (!shield) {
 				if (dis<100*100) {
 					if (!glitch) {
+						audio2.play();
 						score -= 500;
 						if (score < 0) {
                             score = 0;
