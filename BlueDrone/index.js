@@ -313,8 +313,6 @@ function enginestep() {
 			if (!shield) {
 				if (dis<100*100) {
 					if (!glitch) {
-						leserBip.currentTime = 0;
-						leserBip.play();
 						score -= 500;
 						if (score < 0) {
                             score = 0;
