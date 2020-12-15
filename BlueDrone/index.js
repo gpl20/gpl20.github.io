@@ -7,21 +7,6 @@
 			w:1280,
 			h:640
 		}
-myAudio = new Audio('leserGun.mp3'); 
-if (typeof myAudio.loop == 'boolean')
-{
-    myAudio.loop = true;
-}
-else
-{
-    myAudio.addEventListener('ended', function() {
-        this.currentTime = 0;
-        this.play();
-    }, false);
-}
-myAudio.play();
-ver leserBip=new Audio('leserGunbip.mp3');
-leser.play();
 
 		// var backi = new Image();
 		// backi.src = 'back.png';
