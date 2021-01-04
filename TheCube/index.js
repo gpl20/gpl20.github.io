@@ -3408,11 +3408,11 @@ const animationEngine = (() => {
           if (this.state === STATE.Playing) return;
   
           if (this.state === STATE.Menu) {
-            if (!tappedTwice) {
-              tappedTwice = true;
-              setTimeout(() => (tappedTwice = false), 300);
-              return false;
-            }
+            // if (!tappedTwice) {
+            //   tappedTwice = true;
+            //   setTimeout(() => (tappedTwice = false), 300);
+            //   return false;
+            // }
   
             this.game(SHOW);
           } else if (this.state === STATE.Complete) {
